@@ -7,13 +7,15 @@ public class Employer {
     private static int nextId = 1;
     private String value;
 
+    //first constructor
     public Employer() {
         id = nextId;
         nextId++;
     }
 
+    //second constructor
     public Employer(String value) {
-        this();
+        this();     // calls the first constructor and sets id value
         this.value = value;
     }
 

@@ -7,13 +7,27 @@ public class CoreCompetency {
     private static int nextId = 1;
     private String value;
 
+    //first constructor
     public CoreCompetency() {
         this.id = nextId;
         nextId++;
     }
 
+    //second constructor
     public CoreCompetency(String value) {
-        this();
+        this();     //calls first constructor
+        this.value = value;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
         this.value = value;
     }
 

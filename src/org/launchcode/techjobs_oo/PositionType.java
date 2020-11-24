@@ -1,17 +1,21 @@
 package org.launchcode.techjobs_oo;
 
+import java.util.Objects;
+
 public class PositionType {
     private int id;
     private static int nextId = 1;
     private String value;
 
+    //first constructor
     public PositionType() {
         id = nextId;
         nextId++;
     }
 
+    //second constructor
     public PositionType(String value) {
-        this();
+        this();     //calls first constructor
         this.value = value;
     }
 
@@ -32,5 +36,22 @@ public class PositionType {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public String toString() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PositionType that = (PositionType) o;
+        return id == that.id ;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, value);
     }
 }
