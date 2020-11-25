@@ -108,9 +108,7 @@ public class Job {
             location == null &&
             positionType == null &&
             coreCompetency == null) {
-
             return "\nOOPS! This job does not seem to exist.";
-
         }
 
         return  "\n" +

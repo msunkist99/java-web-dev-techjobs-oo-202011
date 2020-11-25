@@ -2,21 +2,15 @@ package org.launchcode.techjobs_oo;
 
 import java.util.Objects;
 
-public class PositionType {
-    private int id;
-    private static int nextId = 1;
-    private String value;
-
+public class PositionType extends JobField {
     //first constructor
     public PositionType() {
-        id = nextId;
-        nextId++;
+        super();
     }
 
     //second constructor
     public PositionType(String value) {
-        this();     //calls first constructor
-        this.value = value;
+        super(value);
     }
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
@@ -26,32 +20,32 @@ public class PositionType {
 
     // Getters and Setters:
 
-    public int getId() {
-        return id;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public String toString() {
-        return value;
-    }
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public String getValue() {
+//        return value;
+//    }
+//
+//    public void setValue(String value) {
+//        this.value = value;
+//    }
+//
+//    public String toString() {
+//        return value;
+//    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PositionType that = (PositionType) o;
-        return id == that.id ;
+        PositionType positionType = (PositionType) o;
+        return getId() == positionType.getId() ;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, value);
-    }
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id, value);
+//    }
 }
