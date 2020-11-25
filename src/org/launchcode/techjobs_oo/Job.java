@@ -2,6 +2,8 @@ package org.launchcode.techjobs_oo;
 
 import java.util.Objects;
 
+import static org.junit.Assert.assertEquals;
+
 public class Job {
 
     private int id;
@@ -95,5 +97,36 @@ public class Job {
 
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
+    }
+
+    @Override
+    public String toString() {
+        final String DATA_NOT_AVAILABLE = "Data not available";
+
+        if (name == null &&
+            employer == null &&
+            location == null &&
+            positionType == null &&
+            coreCompetency == null) {
+
+            return "\nOOPS! This job does not seem to exist.";
+
+        }
+
+        return  "\n" +
+                "ID: " + id + "\n" +
+                "Name: " + (name.equals("") ? DATA_NOT_AVAILABLE : name) + "\n" +
+                "Employer: " + (employer.getValue().equals("") ? DATA_NOT_AVAILABLE : employer) + "\n" +
+                "Location: " + (location.getValue().equals("") ? DATA_NOT_AVAILABLE : location) + "\n" +
+                "Position Type: " + (positionType.getValue().equals("") ? DATA_NOT_AVAILABLE : positionType) + "\n" +
+                "Core Competency: " + (coreCompetency.getValue().equals("") ? DATA_NOT_AVAILABLE : coreCompetency);
+
+//        return  "\n" +
+//                "ID: " + id + "\n" +
+//                "Name: " + name + "\n" +
+//                "Employer: " + employer + "\n" +
+//                "Location: " + location + "\n" +
+//                "Position Type: " + positionType + "\n" +
+//                "Core Competency: " + coreCompetency;
     }
 }
