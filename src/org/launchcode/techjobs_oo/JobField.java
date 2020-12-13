@@ -29,7 +29,16 @@ public abstract class JobField {
         return Objects.hash(getId());
     }
 
-    // Getters and Setters:
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        JobField jobField = (JobField) o;
+        return id == jobField.id &&
+                Objects.equals(value, jobField.value);
+    }
+
+// Getters and Setters:
 
     public int getId() {
         return id;
